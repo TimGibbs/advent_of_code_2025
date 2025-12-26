@@ -1,4 +1,9 @@
-﻿
+﻿// @algorithm CellularAutomaton
+// @category Simulation / Grid
+// @data-structure 2D Array
+// @complexity Time: O(steps · n²), Space: O(n²)
+// @variant Part1: StandardLifeRules, Part2: StuckCorners
+
 await Part1();
 await Part2();
 return;
@@ -18,13 +23,13 @@ async Task Part1()
         }
     }
     
-    for (int i = 0; i < 100; i++)
+    for (var i = 0; i < 100; i++)
     {
         var nextState = new bool[100, 100];
 
-        for (int x = 0; x < 100; x++)
+        for (var x = 0; x < 100; x++)
         {
-            for (int y = 0; y < 100; y++)
+            for (var y = 0; y < 100; y++)
             {
                 var n = Neighbours(x, y);
                 nextState[x, y] =
@@ -48,16 +53,16 @@ IEnumerable<(int x, int y)> Neighbours(int x, int y)
 {
     const int size = 100;
 
-    for (int dx = -1; dx <= 1; dx++)
-    for (int dy = -1; dy <= 1; dy++)
+    for (var dx = -1; dx <= 1; dx++)
+    for (var dy = -1; dy <= 1; dy++)
     {
         if (dx == 0 && dy == 0)
             continue;
 
-        int nx = x + dx;
-        int ny = y + dy;
+        var nx = x + dx;
+        var ny = y + dy;
 
-        if (nx >= 0 && nx < size && ny >= 0 && ny < size)
+        if (nx is >= 0 and < size && ny is >= 0 and < size)
             yield return (nx, ny);
     }
 }
@@ -83,13 +88,13 @@ async Task Part2()
     state[99, 0] = true;
     state[99, 99] = true;
     
-    for (int i = 0; i < 100; i++)
+    for (var i = 0; i < 100; i++)
     {
         var nextState = new bool[100, 100];
 
-        for (int x = 0; x < 100; x++)
+        for (var x = 0; x < 100; x++)
         {
-            for (int y = 0; y < 100; y++)
+            for (var y = 0; y < 100; y++)
             {
                 if (x is 0 or 99 && y is 0 or 99) {nextState[x, y] = true; continue;}
                 var n = Neighbours(x, y);

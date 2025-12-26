@@ -1,4 +1,8 @@
-﻿
+﻿// @algorithm BitmaskEnumeration
+// @category Combinatorics / SubsetSum
+// @data-structure Bitmask / Array
+// @complexity Time: O(2^n · n), Space: O(n)
+// @variant Part1: CountAllValidCombinations, Part2: MinContainerCount
 
 await Part1();
 await Part2();
