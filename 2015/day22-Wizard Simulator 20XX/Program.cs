@@ -1,4 +1,16 @@
-﻿await Part1();
+﻿// @algorithm Dijkstra / BFS / StateSearch
+// @category GameTheory / Simulation
+// @data-structure PriorityQueue, Dictionary
+// @complexity 
+//   Time: Exponential in number of spells and turns, optimized by pruning visited states
+//   Space: O(number of unique game states)
+// @technique BFS, PriorityQueue, StateMemoization, TurnBasedSimulation
+// @variant 
+//   Part1: NormalModeMinimalMana
+//   Part2: HardModeMinimalMana
+
+
+await Part1();
 await Part2();
 return;
 
