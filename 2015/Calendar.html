@@ -28,7 +28,7 @@
             outline: 0;
         }
 
-        main, figure, figcaption {
+        main {
             display: block;
         }
 
@@ -53,217 +53,7 @@
             font-size: 1em;
             font-weight: normal;
         }
-
-        code {
-            position: relative;
-            display: inline-block;
-            margin: 0;
-            padding: 0;
-        }
-
-        code:before {
-            z-index: -1;
-            content: "";
-            position: absolute;
-            display: block;
-            left: -2px;
-            right: -2px;
-            top: 3px;
-            bottom: 0px;
-            border: 1px solid #333340;
-            background: #10101a;
-        }
         
-        .hidden-until-hover > * {
-            visibility: hidden;
-            transition: visibility 0s linear 5s;
-        }
-
-        .hidden-until-hover:hover {
-            transition: border-color 0s linear 1s;
-            border-color: transparent;
-        }
-
-        .hidden-until-hover:hover:before {
-            content: "( keep hovering )";
-            transition: width 0s linear 1s;
-            width: 0;
-        }
-
-        .hidden-until-hover:hover > * {
-            transition: visibility 0s linear 1s;
-            visibility: visible;
-        }
-        
-        input[type="text"], textarea {
-            background: transparent;
-            color: inherit;
-            border: 1px solid #666666;
-            background: #10101a;
-            padding: 0 2px;
-            font-family: inherit;
-            font-size: inherit;
-            margin: 0;
-        }
-
-        textarea {
-            vertical-align: top;
-        }
-
-        label img {
-            vertical-align: bottom;
-            position: relative;
-            top: -3px;
-            margin-right: .3em;
-        }
-
-        input[type="radio"] {
-            display: none;
-        }
-
-        input[type="radio"] ~ span {
-            cursor: pointer;
-            display: inline-block;
-        }
-
-        input[type="radio"] ~ span:before {
-            content: "( ) ";
-        }
-
-        input[type="radio"] ~ span:hover, input[type="radio"] ~ span:focus {
-            background-color: #19193b;
-        }
-
-        input[type="radio"]:checked ~ span {
-            color: #ffffff;
-        }
-
-        input[type="radio"]:checked ~ span:before {
-            content: "(O) ";
-        }
-
-        input[type="checkbox"] {
-            display: none;
-        }
-
-        input[type="checkbox"] ~ span {
-            cursor: pointer;
-            display: inline-block;
-        }
-
-        input[type="checkbox"] ~ span:before {
-            content: "[ ] ";
-        }
-
-        input[type="checkbox"] ~ span:hover, input[type="checkbox"] ~ span:focus {
-            background-color: #19193b;
-        }
-
-        input[type="checkbox"]:checked ~ span {
-            color: #ffffff;
-        }
-
-        input[type="checkbox"]:checked ~ span:before {
-            content: "[X] ";
-        }
-
-        input[type="checkbox"]:disabled ~ span {
-            opacity: .3;
-            cursor: default;
-        }
-
-        input[type="checkbox"]:disabled ~ span:before {
-            content: "[-] ";
-        }
-
-        input[type="checkbox"]:disabled ~ span:hover {
-            background-color: transparent;
-        }
-
-
-        input[type="submit"] {
-            background: transparent;
-            border: 0;
-            font-family: inherit;
-            font-size: inherit;
-            margin: 0;
-            padding: 0;
-            color: #009900;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover, input[type="submit"]:focus {
-            color: #99ff99;
-        }
-
-        *::-moz-focus-inner {
-            padding: 0;
-            border: 0
-        }
-
-        article {
-            width: 45em;
-            margin-bottom: 2em;
-            margin-top: 2em;
-        }
-
-        article:first-of-type {
-            margin-top: 0;
-        }
-
-        article h2 {
-            color: #ffffff;
-            margin-top: 1em;
-            margin-bottom: 1em;
-            white-space: nowrap;
-        }
-
-        article h2 + * {
-            margin-top: 0;
-        }
-
-        article em {
-            color: #ffffff;
-            font-style: normal;
-            text-shadow: 0 0 5px #ffffff;
-        }
-        
-
-        article a {
-            white-space: nowrap;
-        }
-
-        article .aside {
-            opacity: .6;
-        }
-
-        article ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        article li {
-            padding-left: 2.5em;
-            position: relative;
-        }
-
-        article li:before {
-            content: "\00a0\00a0-\00a0";
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-        
-
-        form#settings input[type="radio"] ~ span {
-            min-width: 30em;
-        }
-
-        form#settings input[type="checkbox"] ~ span {
-            min-width: 30em;
-        }
-
-       
         .calendar {
             cursor: default;
             -webkit-user-select: none;
@@ -314,7 +104,7 @@
             color: #ffff66;
         }
 
-        .calendar .calendar-day-new {
+        .calendar {
             animation: anim-day-new 5s;
         }
 
@@ -351,46 +141,6 @@
                 text-shadow: 0 0 5px transparent;
             }
         }
-        
-
-        .stats > span, .stats > span .stats-firstonly, .stats > span .stats-both {
-            color: #666666;
-        }
-
-        .stats > a {
-            color: #cccccc;
-            min-width: 35em;
-            display: inline-block;
-        }
-
-        .stats > a:hover, .stats > a:focus {
-            background-color: #1e1e46;
-        }
-
-
-        .leaderboard-userphoto img {
-            height: 20px;
-            max-width: 20px;
-            vertical-align: middle;
-            position: relative;
-            top: -2px;
-        }
-
-
-        .privboard-days > span {
-            display: inline-block;
-            color: #333333;
-        }
-
-        .privboard-days > a {
-            display: inline-block;
-        }
-
-
-        .privboard-row:hover .privboard-delbtn {
-            opacity: 1;
-        }
-
 
     </style>
 </head>
@@ -551,7 +301,7 @@
         }
 
         .calendar.calendar-beckon > span {
-            animation-name: anim-beckon-dark ! important;
+            animation-name: anim-beckon-dark !important;
         }
 
         @keyframes anim-beckon {
