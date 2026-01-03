@@ -5,3 +5,4 @@ riderModule.iml
 /_ReSharper.Caches/
 input.txt
 advent_of_code.sln.DotSettings.user
+.idea/*
