@@ -1,4 +1,23 @@
-﻿
+﻿// @algorithm Cellular Automaton (1D)
+// @category Simulation / Grid Evolution
+// @input Initial row of tiles ('^' = trap, '.' = safe)
+// @state Boolean array per row (true = trap)
+// @execution-model Row-by-row evolution
+// @rule
+//   A tile is a trap iff one of the following is true:
+//     ^^.  .^^  ^..  ..^
+// @boundary
+//   Missing neighbors treated as safe
+// @variant
+//   Part1: Generate 40 rows
+//   Part2: Generate 400,000 rows
+// @data-structures
+//   List<bool[]> to store rows
+//   bool[] for each row state
+// @complexity
+//   Time: O(rows × columns)
+//   Space: O(rows × columns)
+
 await Part1();
 await Part2();
 return;
