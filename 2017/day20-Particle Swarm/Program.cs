@@ -1,5 +1,45 @@
-﻿using System.Text.RegularExpressions;
-Regex NumberRegex = new(@"-?\d+", RegexOptions.Compiled);
+﻿// @algorithm Particle Motion Analysis
+// @category Discrete Physics / Simulation
+// @input List of particles with position, velocity, acceleration
+// @representation p=<x,y,z>, v=<x,y,z>, a=<x,y,z>
+// @part1
+//   Determine which particle stays closest to origin in the long term
+// @part2
+//   Simulate motion with collision removal
+// @physics-model
+//   Velocity(t+1) = Velocity(t) + Acceleration
+//   Position(t+1) = Position(t) + Velocity(t+1)
+// @distance-metric Manhattan distance from origin
+// @part1-strategy
+//   - Particles with smallest acceleration magnitude dominate long-term behavior
+//   - Tie-break by velocity magnitude
+//   - Tie-break by position magnitude
+// @part2-strategy
+//   - Step simulation for fixed iterations (sufficient for stabilization)
+//   - Update all particles each tick
+//   - Remove particles sharing identical positions (collisions)
+// @collision-rule
+//   All particles at same position after update are destroyed
+// @parsing
+//   Extract integers via regex from input lines
+// @state
+//   - Immutable particle records
+//   - Position, velocity, acceleration vectors
+// @data-structures
+//   - Array of particles
+//   - GroupBy on position for collision detection
+//   - 3D vector struct with Manhattan distance helper
+// @complexity
+//   Part1 Time: O(n log n) due to sorting
+//   Part2 Time: O(T * n) where T = simulation steps
+//   Space: O(n)
+// @notes
+//   - Fixed simulation length assumes no late collisions
+//   - Immutable updates simplify reasoning about state
+
+
+using System.Text.RegularExpressions;
+Regex numberRegex = new(@"-?\d+", RegexOptions.Compiled);
 
 await Part1();
 await Part2();
@@ -33,7 +73,7 @@ async Task Part2()
 
 Particle ParseParticle(string line, int index)
 {
-    var m = NumberRegex.Matches(line);
+    var m = numberRegex.Matches(line);
 
     return new Particle(
         index,
