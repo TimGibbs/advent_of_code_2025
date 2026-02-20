@@ -48,10 +48,11 @@ async Task Part1()
 }
 async Task Part2()
 {
-    var b = 109300;
-    var c = 126300;
+    var b = 93 * 100 + 100000;
+    var c = b + 17000;
+    
     var count = 0;
-    for (int i = b ; i <= c; i+=17)
+    for (var i = b ; i <= c; i+=17)
     {
         if (!IsPrime(i)) count++;
     }
